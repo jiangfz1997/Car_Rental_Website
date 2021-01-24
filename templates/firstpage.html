@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+{% load static %}
+<body background="{% static 'images/bg.png' %}"></body>
+<center><p>登陆成功</p>
+    <form action="/func/" method="post">{% csrf_token %}
+         <input type="submit" value="退出">
+        </form>
+</center>
+</body>
+</html>

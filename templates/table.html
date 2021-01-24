@@ -1,0 +1,13 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Upload Successfully</title>
+    </head>
+    <body>
+        <p>学生名单</p>
+        {% for name in userlist %}
+        <p>{{name.username}}&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp{{name.password}}</p>
+        <br>
+        {% endfor %}
+    </body>
+</html>

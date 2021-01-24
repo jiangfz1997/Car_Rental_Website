@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width:100%;text-align:center">
+ <h1>Welcome！Please input your information.</h1>
+ <div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<form action="/registerCorp/" class="form-horizontal"  method="post">{% csrf_token %}
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">Email</label>
+					<div class="controls" >
+						<input id="inputEmail" name = "inputEmail" type="text" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPassword">Password</label>
+					<div class="controls">
+						<input id="inputPassword" name = "inputPassword" type="password" />
+					</div>
+				</div>
+                <div class="control-group">
+					<label class="control-label" for="re_inputPassword">Password</label>
+					<div class="controls">
+						<input id="re_inputPassword" name="re_inputPassword" type="password" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputFirstName">First Name</label>
+					<div class="controls">
+						<input id="inputFirstName" name="inputFirstName" type="text" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputLastName">Last Name</label>
+					<div class="controls">
+						<input id="inputLastName" name="inputLastName" type="text" />
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="inputPhoneNo">Phone number</label>
+					<div class="controls">
+						<input id="inputPhoneNo" name="inputPhoneNo" type="text" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputStreetAddr">Street Address</label>
+					<div class="controls">
+						<input id="inputStreetAddr" name="inputStreetAddr" type="text" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputCity">City</label>
+					<div class="controls">
+						<input id="inputCity" name="inputCity" type="text" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputState">State</label>
+					<div class="controls">
+						<input id="inputState" name="inputState" type="text" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputZipcode">Zipcode</label>
+					<div class="controls">
+						<input id="inputZipcode" name="inputZipcode" type="text" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputEmployeeID">Employee ID:</label>
+					<div class="controls">
+						<input id="inputEmployeeID" name="inputEmployeeID" type="text" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputCorporationID">Corporation ID:</label>
+					<div class="controls">
+						<input id="inputCorporationID" name="inputCorporationID" type="text" />
+					</div>
+				</div>
+
+				<div class="control-group">
+					<div class="controls">
+                        <button class="btn" type="submit">Sign up</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

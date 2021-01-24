@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rigster Page</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+			#box{
+				background-image: url("../../static/image/duck.jpg");
+				{#border: 5px;#}
+			}
+			#div1{
+				{#height: 30px;#}
+				{#background-color: pink;#}
+				margin: 50px 100px 100px 100px;
+			}
+			#div2{
+                height: 20px;
+				margin: 20px ;
+                margin-left: 150px;
+			}
+            #type1{
+                margin-left: 50px;
+            }
+            label{
+                    width: 150px;
+
+                 display: inline-block;
+
+                 text-align: right;
+
+            }
+            input[type="text"]
+
+            {
+
+                margin-left: 50px;
+                margin-bottom: 10px;
+
+            }
+            input[type="password"]
+
+            {
+                margin-left: 50px;
+                margin-bottom: 10px;
+
+            }
+    </style>
+
+</head>
+<body>
+<div class="jumbotron well" >
+				<h1>
+					Hello, explorer!
+				</h1>
+				<p>
+					We are here to provide your fantastic traveling experience.
+				</p>
+                <p>
+					 <a class="btn btn-primary btn-large" href="http://127.0.0.1:8000/index">Back to Home Page</a>
+				</p>
+
+</div>
+<ul id="myTab" class="nav nav-tabs">
+	<li class="active">
+		<a href="#individual" data-toggle="tab">
+			 Individual
+		</a>
+	</li>
+	<li><a href="#corporation" data-toggle="tab">Corporation</a></li>
+{#	<li class="dropdown">#}
+{#		<a href="#" id="myTabDrop1" class="dropdown-toggle"#}
+{#		   data-toggle="dropdown">Java#}
+{#			<b class="caret"></b>#}
+{#		</a>#}
+{#		<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">#}
+{#			<li><a href="#jmeter" tabindex="-1" data-toggle="tab">jmeter</a></li>#}
+{#			<li><a href="#ejb" tabindex="-1" data-toggle="tab">ejb</a></li>#}
+{#		</ul>#}
+{#	</li>#}
+</ul>
+<div id="div1" class="tab-content">
+	<div class="tab-pane fade in active" id="individual">
+{#        <object type="text/html" data="registerIndi.html"></object>#}
+{#        <iframe border=2 frameborder=0 width=500 height=500 marginheight=0 marginwidth=0 scrolling=no src="registerIndi.html">#}
+{#        </iframe>#}
+{#		<p>individual</p>#}
+
+            <div style="width:100%;text-align:center;color:red;">
+                {% if messages %}
+                    <ul class = "messages">
+                    {%for message in messages %}
+                        <li{%if message.tags %} class="{{ message.tags }}"{% endif %}>{{message }}</li>
+                    {%endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+	    <form action="/registerIndi/" class="form-inline" style="margin-left : 430px" method="post">{% csrf_token %}
+
+
+                <div class="form-group">
+					<label class="text-primary" for="inputEmail">Email</label>
+{#					<div class="controls" >#}
+
+                    <input id="inputEmail" aria-describedby="emailHelp" name = "inputEmail" type="text" placeholder="Enter email"/>
+
+                </div>
+				<div class="control-group">
+					<label class="text-primary" for="inputPassword">Password</label>
+{#					<div class="controls">#}
+						<input id="inputPassword" name = "inputPassword" type="password" />
+{#					</div>#}
+				</div>
+                <div class="control-group">
+					<label class="text-primary" for="re_inputPassword">Password</label>
+{#					<div class="controls">#}
+						<input id="re_inputPassword" name="re_inputPassword" type="password" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputFirstName">First Name</label>
+{#					<div class="controls">#}
+						<input id="inputFirstName" name="inputFirstName" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputLastName">Last Name</label>
+{#					<div class="controls">#}
+						<input id="inputLastName" name="inputLastName" type="text" />
+{#					</div>#}
+				</div>
+
+				<div class="control-group">
+					<label class="text-primary" for="inputPhoneNo">Phone number</label>
+{#					<div class="controls">#}
+						<input id="inputPhoneNo" name="inputPhoneNo" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputStreetAddr">Street Address</label>
+{#					<div class="controls">#}
+						<input id="inputStreetAddr" name="inputStreetAddr" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputCity">City</label>
+{#					<div class="controls">#}
+						<input id="inputCity" name="inputCity" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputState">State</label>
+{#					<div class="controls">#}
+						<input id="inputState" name="inputState" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputZipcode">Zipcode</label>
+{#					<div class="controls">#}
+                    <input id="inputZipcode" name="inputZipcode" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputDriverLicenceNo">Driver Licence No.</label>
+{#					<div class="controls">#}
+						<input id="inputDriverLicenceNo" name="inputDriverLicenceNo" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputInsuranceCompany">Insurance Company</label>
+{#					<div class="controls">#}
+						<input id="inputInsuranceCompany" name="inputInsuranceCompany" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputInsurancePolicyNo">Insurance Policy No.</label>
+{#					<div class="controls">#}
+						<input id="inputInsurancePolicyNo" name="inputInsurancePolicyNo" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<div id="div2" class="controls">
+                        <button type="submit" class="btn btn-primary btn-lg">Sign UP!</button>
+					</div>
+				</div>
+			</form>
+    </div>
+	<div class="tab-pane fade" id="corporation">
+{#		<p>Corporation</p>#}
+        <form action="/registerCorp/" class="form-inline"  style="margin-left : 430px" method="post">{% csrf_token %}
+
+				<div class="control-group">
+					<label class="text-primary" for="inputEmail">Email</label>
+{#					<div class="controls" >#}
+						<input id="inputEmail" name = "inputEmail" type="text" placeholder="Enter email"/>
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputPassword">Password</label>
+{#					<div class="controls">#}
+						<input id="inputPassword" name = "inputPassword" type="password" />
+{#					</div>#}
+				</div>
+                <div class="control-group">
+					<label class="text-primary" for="re_inputPassword">Password</label>
+{#					<div class="controls">#}
+						<input id="re_inputPassword" name="re_inputPassword" type="password" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputFirstName">First Name</label>
+{#					<div class="controls">#}
+						<input id="inputFirstName" name="inputFirstName" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputLastName">Last Name</label>
+{#					<div class="controls">#}
+						<input id="inputLastName" name="inputLastName" type="text" />
+{#					</div>#}
+				</div>
+
+				<div class="control-group">
+					<label class="text-primary" for="inputPhoneNo">Phone number</label>
+{#					<div class="controls">#}
+						<input id="inputPhoneNo" name="inputPhoneNo" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputStreetAddr">Street Address</label>
+{#					<div class="controls">#}
+						<input id="inputStreetAddr" name="inputStreetAddr" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputCity">City</label>
+{#					<div class="controls">#}
+						<input id="inputCity" name="inputCity" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputState">State</label>
+{#					<div class="controls">#}
+						<input id="inputState" name="inputState" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputZipcode">Zipcode</label>
+{#					<div class="controls">#}
+						<input id="inputZipcode" name="inputZipcode" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputEmployeeID">Employee ID:</label>
+{#					<div class="controls">#}
+						<input id="inputEmployeeID" name="inputEmployeeID" type="text" />
+{#					</div>#}
+				</div>
+				<div class="control-group">
+					<label class="text-primary" for="inputCorporationID">Corporation Registration No:</label>
+{#					<div class="controls">#}
+						<input id="inputCorporationID" name="inputCorporationID" type="text" />
+{#					</div>#}
+				</div>
+
+				<div  class="control-group">
+					<div id="div2" class="controls">
+{#                        <button class="btn" type="submit">Sign up</button>#}
+                        <button type="submit" class="btn btn-primary btn-lg">Sign UP!</button>
+					</div>
+				</div>
+			</form>
+	</div>
+{#	<div class="tab-pane fade" id="jmeter">#}
+{#		<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>#}
+{#	</div>#}
+{#	<div class="tab-pane fade" id="ejb">#}
+{#		<p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。#}
+{#		</p>#}
+{#	</div>#}
+
+</div>
+{#{% if messages %}#}
+{#<ul class="messages">#}
+{#  {% for message in messages %}#}
+{#  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>#}
+{#  {% endfor %}#}
+{#</ul>#}
+{#{% endif %}#}
+
+</body>
+</html>
